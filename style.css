@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  padding: 15px;
+}
+
+/* Card */
+.card {
+  background: rgba(255, 255, 255, 0.96);
+  padding: 32px 26px;
+  border-radius: 30px;
+  text-align: center;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 25px 50px rgba(255, 105, 135, 0.4);
+  animation: pop 0.8s ease;
+  z-index: 10;
+}
+
+@keyframes pop {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  color: #ff4d6d;
+  font-size: clamp(24px, 6vw, 32px);
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: clamp(15px, 4vw, 18px);
+  color: #555;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 22px;
+  position: relative;
+  height: 70px;
+}
+
+button {
+  padding: 12px 26px;
+  font-size: clamp(14px, 4vw, 16px);
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+#yes {
+  background: linear-gradient(45deg, #ff758c, #ff7eb3);
+  color: white;
+  box-shadow: 0 10px 20px rgba(255, 120, 160, 0.4);
+}
+
+#no {
+  background: #ffe0e9;
+  color: #ff4d6d;
+  position: absolute;
+  transition: 0.2s;
+}
+
+/* Heart rain */
+.heart {
+  position: fixed;
+  top: -10px;
+  font-size: clamp(18px, 5vw, 24px);
+  animation: fall linear forwards;
+  opacity: 0.85;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+/* Cute image */
+.cute-img {
+  width: 100%;
+  max-width: 230px;
+  margin-top: 18px;
+  border-radius: 25px;
+  animation: float 3s ease-in-out infinite, glow 2s infinite alternate;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 15px #ff9a9e; }
+  to { box-shadow: 0 0 35px #ff4d6d; }
+}
